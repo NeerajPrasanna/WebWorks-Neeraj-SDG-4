@@ -50,6 +50,7 @@ function logout() {
   document.getElementById("forum").style.display = "none";
   document.getElementById("about").style.display = "none";
   document.getElementById("profile").style.display = "none";
+  document.getElementById("nav").style.display = "none";
   document.getElementById("uname").value = "";
   document.getElementById("pword").value = "";
   document.getElementById("country").value = "";
@@ -59,7 +60,7 @@ function home() {
   document.getElementById("login").style.display = "none";
   document.getElementById("welcome-header").style.display = "none";
   document.getElementById("dashboard").style.display = "flex";
-  document.getElementById("dash-name").textContent = username.split(" ")[0]; // Assuming username is defined elsewhere
+  document.getElementById("dash-name").textContent = username.split(" ")[0]; 
   document.getElementById("courses").style.display = "none";
   document.getElementById("forum").style.display = "none";
   document.getElementById("about").style.display = "none";
