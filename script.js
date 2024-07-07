@@ -59,7 +59,7 @@ function home() {
   document.getElementById("login").style.display = "none";
   document.getElementById("welcome-header").style.display = "none";
   document.getElementById("dashboard").style.display = "flex";
-  document.getElementById("dash-name").textContent = username.split(" ")[0]; 
+  document.getElementById("dash-name").textContent = username.split(" ")[0]; // Assuming username is defined elsewhere
   document.getElementById("courses").style.display = "none";
   document.getElementById("forum").style.display = "none";
   document.getElementById("about").style.display = "none";
@@ -134,7 +134,7 @@ function postMessage() {
     const userMessageDiv = document.createElement("div");
     userMessageDiv.className = "user-message";
     userMessageDiv.textContent = messageText;
-    userMessageDiv.style.color = "white"; 
+    userMessageDiv.style.color = "white"; // Correct way to set style
 
     const deleteButton = document.createElement("button");
     deleteButton.className = "delete-button bg-danger";
@@ -152,57 +152,59 @@ function postMessage() {
     messageInput.value = "";
   }
 }
-
+// Function to add a course
 function addCourse(courseId) {
-
+  // Find the course element in the courses div
   var courseElement = document.getElementById(courseId);
 
-
+  // Check if the course element exists
   if (courseElement) {
-   
+    // Clone the course element
     var clonedCourse = courseElement.cloneNode(true);
 
-  
+    // Remove the add button from the cloned course
     var addButton = clonedCourse.querySelector(".add-button");
     if (addButton) {
       addButton.parentNode.removeChild(addButton);
     }
 
-  
+    // Add the delete button to the cloned course
     var deleteButton = document.createElement("button");
     deleteButton.className = "delete-button bg-danger";
     deleteButton.textContent = "Delete";
     deleteButton.setAttribute("onclick", "deleteCourse('" + courseId + "')");
     clonedCourse.appendChild(deleteButton);
 
-   
+    // Append the cloned course to the enrolled courses list
     var enrolledCourses = document.getElementById("regcourses");
     if (enrolledCourses) {
       enrolledCourses.appendChild(clonedCourse);
     }
 
-   
+    // Hide the original course element in the courses div
     courseElement.style.display = "none";
 
-   
+    // Update UI or perform any other actions as needed
+
+    // Example: Update dashboard name
     var dashNameElement = document.getElementById("dash-name");
     if (dashNameElement) {
-      dashNameElement.textContent = "John Doe"; 
+      dashNameElement.textContent = "John Doe"; // Example name
     }
   }
 }
 
-
+// Function to delete a course
 function deleteCourse(courseId) {
- 
+  // Find the course element in the enrolled courses list
   var courseElement = document.getElementById(courseId);
 
-
+  // Check if the course element exists
   if (courseElement) {
-   
+    // Remove the course element from the enrolled courses list
     courseElement.parentNode.removeChild(courseElement);
 
-   
+    // Show the original course element in the courses div
     var originalCourse = document
       .getElementById("courses")
       .querySelector("#" + courseId);
@@ -210,6 +212,6 @@ function deleteCourse(courseId) {
       originalCourse.style.display = "block";
     }
 
-   
+    // Update UI or perform any other actions as needed
   }
 }
