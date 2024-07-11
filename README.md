@@ -11,7 +11,9 @@ Further implementations of this project can be to:
 
 This site was developed using HTML, CSS and Vanilla JavaScript.
 I employed the Bootstrap framework to create a better User Interface and along with CSS Media Queries, I made sure to make the website responsive.
+
 Icons were taken from FontAwesome. Link: https://fontawesome.com/
+
 EduCare Logo was generated using Gemini AI.
 
 Link to the website: https://neerajprasanna.github.io/WebWorks-Neeraj-SDG-4/#
